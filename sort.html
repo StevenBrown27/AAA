@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the buttons to sort the array alphabetically or numerically.</p>
+
+<button onclick="bubbleSort()">Sort Array</button>
+<p id="list"></p>
+
+<script>
+var points = [40, 100, 1, 5, 25, 10]; // Random list of values.
+document.getElementById("list").innerHTML = points;
+
+function bubbleSort() {
+	var swap = false;	// Keep track if a swap occurs
+
+   						// Loop variables
+	var i;
+    var j;
+
+    for (i = 0; i < points.length - 1; i++) {
+
+    swap = false;
+
+    	for ( j = 0; j < points.length-1; j++) {
+
+            if ( points[j] > points [j+1]) {  // Check if Array is bigger.
+
+            	var temp = points[j];   // Hold the larger array value.
+                points [j] = points [j+1]; // J is now J+1
+                points [j+1] = temp;  // J+1 is now j
+                swap = true;
+            }
+        }
+
+        if (swap = false) { // No more swaps occur leave for Loop.
+
+            break;
+        }
+  }
+
+
+   document.getElementById("list").innerHTML = points;
+
+}
+
+</script>
+
+</body>
+</html>
